@@ -109,5 +109,11 @@
     "routeNotFound": "Unknown request.",
     "demoNotice": "Demo mode: accounts and lessons are saved only in this browser.",
     "seedAuthorName": "Predichess"
+  },
+  "showcaseNotice": {
+    "title": "Welcome to Predichess",
+    "body": "This is a showcase of Predichess, a platform for creating and playing interactive chess lessons. The full project ran on its own server and database; this version runs entirely in your browser so you can try it freely.",
+    "dataNote": "Anything you create (accounts, lessons, progress) stays only in this browser and is never sent anywhere. Don't use a real password.",
+    "dismissButton": "Got it, let me in"
   }
 }

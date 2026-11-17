@@ -1764,6 +1764,67 @@ transform: translateY(-5px) translateX(5px);
     transition: transform .18s var(--ease-snap), box-shadow .18s var(--ease-snap), background .18s, color .18s, width .25s var(--ease-snap);
 }
 
+.showcase-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: rgba(28, 28, 28, 0.82);
+}
+
+.showcase-dialog {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background: var(--c-bg);
+    color: var(--c-text);
+    border: 3px solid var(--c-text);
+    box-shadow: 10px 10px 0 var(--c-accent);
+}
+
+.showcase-title {
+    font-family: title;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: .02em;
+}
+
+.showcase-body {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.showcase-note {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--c-muted);
+    border-top: 2px dashed var(--c-accent);
+    padding-top: 12px;
+}
+
+.showcase-button {
+    align-self: flex-start;
+    padding: 12px 20px;
+    font-family: subtitle;
+    font-size: 15px;
+    color: var(--c-text);
+    background: var(--c-accent);
+    border: 3px solid var(--c-text);
+    box-shadow: var(--shadow-hard);
+    cursor: pointer;
+    transition: transform .18s var(--ease-snap), box-shadow .18s var(--ease-snap);
+}
+
+.showcase-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--c-text);
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         transition-duration: 0s !important;

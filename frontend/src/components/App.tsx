@@ -2,6 +2,7 @@ import { UserContext, getInitialAuthState, getUserId, clearUserIdCookie,setUserC
 import {useState} from "react";
 import {LoginLayout} from "./auth_stuff/LoginLayout";
 import {NormalLayout} from "./NormalLayout";
+import {ShowcaseNotice} from "../shared/showcaseNotice/ShowcaseNotice";
 
 export function App() {
 
@@ -41,6 +42,7 @@ export function App() {
             ) : (
                 <LoginLayout onLogin={setLoggedCookie} />
             )}
+            <ShowcaseNotice />
         </UserContext.Provider>
     );
 }

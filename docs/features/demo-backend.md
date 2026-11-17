@@ -19,3 +19,7 @@ To point the app back at a real server later, bind `apiFetch` to a function that
 - Passwords are hashed with PBKDF2-SHA256, 210 000 iterations and a 16-byte random salt via Web Crypto. Argon2id/bcrypt are not available in the browser without a WASM dependency; since the data never leaves the visitor's own browser this was judged sufficient. See `docs/decisions/0001-static-demo-backend.md`.
 - Ownership checks (only the creator may save or publish a lesson) are enforced inside `demoBackend`, mirroring the server. They protect against UI bugs, not a malicious visitor, who controls their own `localStorage` anyway.
 - Request bodies are parsed defensively; malformed JSON returns 400 and unknown routes 404.
+
+## Showcase notice
+
+On first visit `shared/showcaseNotice/ShowcaseNotice.tsx` explains that this is a browser-only showcase and that data stays local. Dismissal is remembered under the `localStorage` key `predichess.showcaseNoticeDismissed`; if storage is blocked the notice simply shows again on the next visit.
