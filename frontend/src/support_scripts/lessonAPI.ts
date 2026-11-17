@@ -1,8 +1,7 @@
 import type {LessonState, Lesson, Step, Task} from "./types";
-import {backendURL} from "./url";
+import {apiFetch} from "./url";
 import {getTranslations} from "./languages";
 
-const URL= backendURL();
 
 export interface LessonWithDifficulty extends Lesson {
     difficulty: number;
@@ -19,7 +18,7 @@ export interface PlayerStats {
 
 // Získání všech lekcí uživatele
 export async function fetchUserLessons (userId: number) : Promise<Lesson[]> {
-    const response = await fetch(URL + "/lessons/user/" + userId)
+    const response = await apiFetch("/lessons/user/" + userId)
     const result = await response.json()
     if (Array.isArray(result)) {
         return result.map((lesson: any) => ({
@@ -47,7 +46,7 @@ export async function fetchUserLessons (userId: number) : Promise<Lesson[]> {
 
 // Vytvoření lekce, uložení do databáze
 export async function createLesson (title: string, userId: number) : Promise<Lesson> {
-    const response = await fetch(URL + "/addLesson", {
+    const response = await apiFetch("/addLesson", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -77,7 +76,7 @@ export async function fetchLessonData (lessonId:string) : Promise<{
     steps: Step[],
     tasks: Task[]
 }> {
-    const response = await fetch(URL + "/lessons/" + lessonId + "/data")
+    const response = await apiFetch("/lessons/" + lessonId + "/data")
     const result = await response.json()
     if (!result.success) {
         throw new Error(result.message);
@@ -103,7 +102,7 @@ export async function fetchLessonData (lessonId:string) : Promise<{
 // Získání dat o hráči
 
 export async function fetchPlayerStats(accountId: number): Promise<PlayerStats> {
-    const response = await fetch(URL + "/account/"+accountId+"/stats");
+    const response = await apiFetch("/account/"+accountId+"/stats");
     const result = await response.json();
 
     if (!result.success) {
@@ -124,7 +123,7 @@ export async function saveLessonData (
     state: LessonState,
     userId: number
 ) : Promise<boolean> {
-    const response = await fetch(URL + "/lessons/" + lessonId + "/data", {
+    const response = await apiFetch("/lessons/" + lessonId + "/data", {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify({
@@ -151,7 +150,7 @@ export async function publishLesson (
     elo: number,
     description: string
 ) : Promise<boolean> {
-    const response = await fetch(URL + "/lessons/" + lessonId + "/publish", {
+    const response = await apiFetch("/lessons/" + lessonId + "/publish", {
         method: "PATCH",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify({
@@ -195,7 +194,7 @@ export async function saveLessonCompletion (
     xpGained: number,
     eloChange: number
 ) : Promise<boolean> {
-    const response = await fetch(URL + "/lessons/complete", {
+    const response = await apiFetch("/lessons/complete", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -241,7 +240,7 @@ export interface PublicLesson {
 // Získání posledních publikovaných lekcí komunity
 
 export async function fetchRecentLessons(limit: number = 40): Promise<PublicLesson[]> {
-    const response = await fetch(`${URL}/lessons/recent?limit=${limit}`);
+    const response = await apiFetch(`/lessons/recent?limit=${limit}`);
     const result = await response.json();
     if (!result.success) throw new Error(result.message);
     return result.lessons;

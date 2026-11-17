@@ -1,11 +1,3 @@
-// Poskytnutí backend URL
+import {demoFetch} from "../shared/demoBackend/demoFetch";
 
-export function backendURL() {
-    return "http://localhost:4000"
-
-    // Local
-    // http://localhost:4000
-
-    // External
-    // https://backend01-3469.onrender.com
-}
+export const apiFetch = demoFetch;

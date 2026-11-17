@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { backendURL } from "../../support_scripts/url";
+import { apiFetch } from "../../support_scripts/url";
 import { getCookie } from "../../support_scripts/getCookie";
 import {LessonCard} from "./LessonCard";
 import {getTranslations} from "../../support_scripts/languages";
@@ -63,7 +63,7 @@ export function Home() {
             }
 
             // Jednoduchá žádost o data
-            const res = await fetch(backendURL() + "/user/" + cookie);
+            const res = await apiFetch("/user/" + cookie);
 
             if (!res.ok) {
                 throw new Error(getTranslations().errors.HTTPError + res.status);
