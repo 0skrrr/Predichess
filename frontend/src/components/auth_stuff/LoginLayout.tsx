@@ -27,6 +27,7 @@ export function LoginLayout( {onLogin} : {onLogin: (value: boolean) => void }) {
                         <RegisterForm onSwitch={switchScreen} onLogin = {onLogin}/>
                     </>
                 )}
+                <p className="demo-notice">{getTranslations().demoBackend.demoNotice}</p>
             </div>
         </div>
     );
