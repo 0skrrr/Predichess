@@ -1,6 +1,6 @@
 import {getTranslations} from "../../support_scripts/languages";
 import {useState} from "react";
-import {backendURL} from "../../support_scripts/url";
+import {apiFetch} from "../../support_scripts/url";
 import {setUserCookie} from "../../support_scripts/auth";
 
 // Commenty nejsou třeba, princip je stejný jak RegisterForm.tsx
@@ -8,7 +8,7 @@ export function LoginForm( {onSwitch, onLogin} : {
     onSwitch: (value: boolean) => void,
     onLogin: (value: boolean) => void
 }) {
-    const registerURL = backendURL() + "/login"
+    const registerURL = "/login"
     const email = getTranslations().accountLogin.loginEmail;
     const password = getTranslations().accountLogin.loginPassword;
     interface ErrorFields {
@@ -49,7 +49,7 @@ export function LoginForm( {onSwitch, onLogin} : {
             return
         }
         try {
-            const response = await fetch(registerURL, {
+            const response = await apiFetch(registerURL, {
                 method: "POST",
                 headers:{"Content-Type" : "application/json"},
                 body: JSON.stringify(inputs)

@@ -1,6 +1,6 @@
 import {getTranslations} from "../../support_scripts/languages";
 import React, {useState} from "react";
-import {backendURL} from "../../support_scripts/url";
+import {apiFetch} from "../../support_scripts/url";
 import {setUserCookie} from "../../support_scripts/auth";
 
 export function RegisterForm( {onSwitch, onLogin} : {
@@ -9,7 +9,7 @@ export function RegisterForm( {onSwitch, onLogin} : {
 }) {
 
     // Nastavení proměnných a stavových proměnných, prostě state nevím jak se to píše česky
-    const registerURL = backendURL() + "/register"
+    const registerURL = "/register"
     const username = getTranslations().accountRegister.registerUsername;
     const email = getTranslations().accountRegister.registerEmail;
     const password = getTranslations().accountRegister.registerPassword;
@@ -62,7 +62,7 @@ export function RegisterForm( {onSwitch, onLogin} : {
 
         // Zaslání registrovacího formuláře
         try {
-            const response = await fetch(registerURL, {
+            const response = await apiFetch(registerURL, {
                 method: "POST",
                 headers:{"Content-Type" : "application/json"},
                 body: JSON.stringify(inputs)

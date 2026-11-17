@@ -21,10 +21,11 @@
     "playButton": "Play",
     "learnButton": "Learn",
     "editorButton": "Editor",
-    "settingsButton": "Settings"
-    },
+    "settingsButton": "Settings",
+    "logoutButton": "Log out"
+  },
   "editor": {
-    "leftBar" : {
+    "leftBar": {
       "leftBarTitle": "Add",
       "leftBarTask": "Task",
       "leftBarBoard": "Board",
@@ -34,9 +35,8 @@
       "leftBarQuestion": "Question"
     },
     "rightBar": {
-      "boardEditor": {
-      },
-      "textEditor" : {
+      "boardEditor": {},
+      "textEditor": {
         "placeholderMessage": "Add your instructional text here!"
       }
     },
@@ -48,7 +48,7 @@
     }
   },
   "home": {
-    "noBio" : "No bio provided",
+    "noBio": "No bio provided",
     "memberSince": "Member since: ",
     "bio": "Bio",
     "elo": "ELO Rating",
@@ -84,7 +84,7 @@
     "useUserIdNotUsedInUserProvider": "useUserId must be used within a UserProvider!",
     "usernameIsRequired": "Username is required!",
     "invalidEmailFormat": "Invalid email format!",
-    "passwordNotLongEnough":"Password must be at least 6 characters long!",
+    "passwordNotLongEnough": "Password must be at least 6 characters long!",
     "generalLoginOrRegisterError": "Something went wrong! Try again: ",
     "invalidResponseFormat": "Invalid response format!",
     "failedToFetchPlayerStats": "Failed to fetch player stats.",
@@ -94,5 +94,26 @@
     "userIdCookieMissing": "UserId cookie missing!",
     "HTTPError": "HTTP error! ",
     "unknownError": "An unknown error has occured."
+  },
+  "demoBackend": {
+    "usernameTaken": "Username already exists!",
+    "emailTaken": "Email already exists!",
+    "userNotFound": "No account with this email exists.",
+    "wrongPassword": "Wrong password.",
+    "invalidRequest": "Invalid request.",
+    "lessonTitleTaken": "A lesson with this title already exists.",
+    "lessonNotFound": "Lesson not found.",
+    "notLessonCreator": "Only the lesson creator can do this.",
+    "accountNotFound": "Account not found.",
+    "invalidElo": "Elo must be a number between 100 and 3000.",
+    "routeNotFound": "Unknown request.",
+    "demoNotice": "Demo mode: accounts and lessons are saved only in this browser.",
+    "seedAuthorName": "Predichess"
+  },
+  "showcaseNotice": {
+    "title": "Welcome to Predichess",
+    "body": "This is a showcase of Predichess, a platform for creating and playing interactive chess lessons. The full project ran on its own server and database; this version runs entirely in your browser so you can try it freely.",
+    "dataNote": "Anything you create (accounts, lessons, progress) stays only in this browser and is never sent anywhere. Don't use a real password.",
+    "dismissButton": "Got it, let me in"
   }
 }

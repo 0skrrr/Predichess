@@ -40,10 +40,6 @@ export const QuestionContent: React.FC<QuestionContentProps> = ({ step, isLastSt
     
     const playerTranslations = translations.learn.player as any;
 
-    const nextButtonText = isLastStep
-        ? playerTranslations.completeLesson
-        : playerTranslations.nextStep;
-
     return (
         <div className="lp-question-container">
             <h3 className="lp-question-text">{question}</h3>

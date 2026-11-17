@@ -8,7 +8,6 @@ import {
 import {useEffect, useState} from "react";
 import {useLessonContext} from "../../support_scripts/lessonContext";
 import type {Lesson} from "../../support_scripts/types";
-import React from 'react';
 import {useUserId} from "../../support_scripts/auth";
 
 

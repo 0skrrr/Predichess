@@ -87,7 +87,7 @@ export const LessonPlayer: React.FC<LessonPlayerProps> = ({ lessonId, onExit }) 
     useEffect(() => {
         let interval: number | null = null;
         if (!loading && !showComplete) {
-            interval = setInterval(() => {
+            interval = window.setInterval(() => {
                 setStats(prev => ({ ...prev, timerSeconds: prev.timerSeconds + 1 }));
             }, 1000);
         }
