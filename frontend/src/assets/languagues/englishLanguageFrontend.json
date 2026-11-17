@@ -1,0 +1,98 @@
+{
+  "accountRegister": {
+    "registerTitle": "Register Your account",
+    "registerUsername": "Username",
+    "registerEmail": "Email adress",
+    "registerPassword": "Password",
+    "registerButton": "Register",
+    "switch": "Or Login"
+  },
+  "accountLogin": {
+    "loginTitle": "Log in to Your account",
+    "loginEmail": "Email adress",
+    "loginPassword": "Password",
+    "loginButton": "Log in",
+    "switch": "Or Register"
+  },
+  "sidebar": {
+    "homeButton": "Home",
+    "accountButton": "Account",
+    "profileButton": "Profile",
+    "playButton": "Play",
+    "learnButton": "Learn",
+    "editorButton": "Editor",
+    "settingsButton": "Settings"
+    },
+  "editor": {
+    "leftBar" : {
+      "leftBarTitle": "Add",
+      "leftBarTask": "Task",
+      "leftBarBoard": "Board",
+      "leftBarMultiboard": "Multi",
+      "leftBarAnimation": "Animation",
+      "leftBarText": "Text",
+      "leftBarQuestion": "Question"
+    },
+    "rightBar": {
+      "boardEditor": {
+      },
+      "textEditor" : {
+        "placeholderMessage": "Add your instructional text here!"
+      }
+    },
+    "downBar": {
+      "stepTitleTemplate": "New Step",
+      "duplicateTitle": " (copy)",
+      "lessonTitleTemplate": "New Lesson",
+      "taskTitleTemplate": "New Task"
+    }
+  },
+  "home": {
+    "noBio" : "No bio provided",
+    "memberSince": "Member since: ",
+    "bio": "Bio",
+    "elo": "ELO Rating",
+    "XP": "Total XP",
+    "noProfile": "No profile data found.",
+    "lessonNA": "N/A",
+    "lessonNoDescription": "No description.",
+    "lessonDifficultyTitle": "Difficulty: ",
+    "lessonStatusTitle": "Status: ",
+    "lessonCompleted": "Completed",
+    "lessonLastSaved": "Last saved"
+  },
+  "learn": {
+    "list": {
+      "failedToLoadLessons": "Failed to load lessons",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "daysAgo": " days ago ",
+      "monthsAgo": " months ago",
+      "loadingLessons": "Loading lessons... ",
+      "recentLessons": "Recent Lessons",
+      "subtitle": "Discover the latest community lessons!",
+      "yourLesson": "Your Lesson",
+      "noDescription": "No description",
+      "startLesson": "Start Lesson "
+    },
+    "player": {
+      "noDescription": "No description provided",
+      "loadingLesson": "Loading Lesson "
+    }
+  },
+  "errors": {
+    "useUserIdNotUsedInUserProvider": "useUserId must be used within a UserProvider!",
+    "usernameIsRequired": "Username is required!",
+    "invalidEmailFormat": "Invalid email format!",
+    "passwordNotLongEnough":"Password must be at least 6 characters long!",
+    "generalLoginOrRegisterError": "Something went wrong! Try again: ",
+    "invalidResponseFormat": "Invalid response format!",
+    "failedToFetchPlayerStats": "Failed to fetch player stats.",
+    "failedToPublishLesson": "Failed to publish lesson.",
+    "failedToSaveCompletion": "Failed to save completion. ",
+    "useLessonContextNotWithinEditorLayout": "useLessonContext must be within editor layout!",
+    "userIdCookieMissing": "UserId cookie missing!",
+    "HTTPError": "HTTP error! ",
+    "unknownError": "An unknown error has occured."
+  }
+}
